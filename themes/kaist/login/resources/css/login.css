@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #0a1f44;  /* 네이비 */
+    color: white;
+}
+
+.kc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.kc-login-box {
+    background: #142850;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    text-align: center;
+}
+
+.kc-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    background: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0088cc;
+}
+
+.kc-register {
+    margin-top: 20px;
+}
+
+.kc-register a {
+    color: #aadfff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
