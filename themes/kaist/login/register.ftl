@@ -27,13 +27,19 @@
                 <input type="email" id="email" name="email"
                     value="${(register.formData.email!'')}" placeholder="Email" required />
 
+                <input type="text" id="firstName" name="firstName"
+                    value="${(register.formData.firstName!'')}" placeholder="First name" required />
+
+                <input type="text" id="lastName" name="lastName"
+                    value="${(register.formData.lastName!'')}" placeholder="Last name" required />
+
                 <input type="password" id="password" name="password"
                     placeholder="Password" required />
 
                 <input type="password" id="password-confirm" name="password-confirm"
                     placeholder="Confirm password" required />
 
-                <#-- 🔧 Optional dynamic fields -->
+                <#-- 🔧 Optional custom attributes -->
                 <#if attributes??>
                     <#list attributes?keys as fieldName>
                         <input type="text" name="${fieldName}" 
