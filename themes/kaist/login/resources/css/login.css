@@ -1,66 +1,128 @@
-body {
-    margin: 0;
-    font-family: 'Pretendard', sans-serif;
-    background-color: #0a1f44;  /* 네이비 */
-    color: white;
+/* File: resources/css/login.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background: url('../img/star-bg.png') no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.kc-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.wrapper {
+  width: 90vw;
+  height: auto;
+  max-width: 1220px;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.login-panel {
+  flex: 1 1 45%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 56px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 360px;
+}
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
 }
 
-.kc-login-box {
-    background: #142850;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 320px;
-    text-align: center;
+.title {
+  font-size: 24px;
+  color: #0a1f44;
+  margin-bottom: 30px;
 }
 
-.kc-title {
-    margin-bottom: 30px;
-    font-size: 24px;
-    color: #ffffff;
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 6px;
-    background: #f1f1f1;
-    color: #333;
-    font-size: 14px;
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #00aaff;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  background: #0a1f44;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 button[type="submit"]:hover {
-    background-color: #0088cc;
+  background: #003366;
 }
 
-.kc-register {
-    margin-top: 20px;
+.register {
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-.kc-register a {
-    color: #aadfff;
-    text-decoration: none;
-    font-size: 14px;
+.register a {
+  color: #024a92;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.description-panel {
+  flex: 1 1 50%;
+  color: white;
+  max-width: 600px;
+}
+
+.description-panel h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.description-panel p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .description-panel {
+    max-width: 90%;
+  }
 }
 

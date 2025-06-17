@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="utf-8" />
-    <title>KAIST AI Contest Login</title>
-    <link rel="stylesheet" href="${url.resourcesPath}/css/login.css" />
-
+  <meta charset="UTF-8" />
+  <title>${msg("loginTitle")}</title>
+  <link rel="stylesheet" href="${url.resourcesPath}/css/login.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="kc-container">
-        <div class="kc-login-box">
-            <h1 class="kc-title">KAIST AI Contest</h1>
-            <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
-                <input type="text" id="username" name="username" placeholder="Team Name" autofocus />
-                <input type="password" id="password" name="password" placeholder="Password" />
-                
-                <#if selectedCredential??>
-                  <input type="hidden" name="credentialId" value="${selectedCredential.id}" />
-                </#if>
+  <div class="wrapper">
+    <div class="login-panel">
+      <img src="${url.resourcesPath}/img/kaist-logo.png" alt="KAIST" class="logo" />
+      <h2 class="title">${msg("doLogIn")}</h2>
 
-                <button type="submit" name="login">Login</button>
-            </form>
-
-            <#if realm.password && realm.registrationAllowed>
-                <p class="kc-register"><a href="${url.registrationUrl}">Registration</a></p>
-            </#if>
+      <#-- ❀ Error message -->
+      <#if message?has_content>
+        <div class="kc-feedback-text">
+          ${message.summary?no_esc}
         </div>
+      </#if>
+
+      <form id="kc-form-login" action="${url.loginAction}" method="post">
+        <input type="text" id="username" name="username" value="${(login.username!'')}" placeholder="Team Name" required />
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <button type="submit">${msg("doLogIn")}</button>
+      </form>
+
+      <#-- Register link -->
+      <p class="register">
+        ${msg("noAccount")} <a href="${url.registrationUrl}">${msg("doRegister")}</a>
+      </p>
     </div>
+
+    <div class="description-panel">
+      <h2>KAIST AI Contest Platform</h2>
+      <p>
+        이 플랫폼은 인공지능 경진대회 참가자들을 위한 클라우드 기반 학습 및 평가 시스템입니다.<br /><br />
+        Jupyter, 코드 서버, 제주 차점, 실시간 랭킹 기능을 포함하고 있습니다.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
-
