@@ -120,12 +120,20 @@ button[type="submit"]:hover {
 .description-panel {
   flex: 1;
   color: white;
+
   max-width: 600px;
+  min-width: 400px;
+  padding-right: 20px;
+  transform: translateY(-30px);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateY(-10%);
+
+  word-break: keep-all;        
+  line-height: 1.7;            
 }
+
 .description-panel h2 {
   font-size: 32px;
   margin-bottom: 64px;
@@ -134,6 +142,7 @@ button[type="submit"]:hover {
 .description-panel p {
   font-size: 20px;
   line-height: 1.6;
+  margin: 0;
 }
 
 @media (max-width: 992px) {
