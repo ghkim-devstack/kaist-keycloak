@@ -34,8 +34,8 @@
     <div class="description-panel">
       <h2>KAIST AI Contest Platform</h2>
       <p>
-        이 플랫폼은 인공지능 경진대회 참가자들을 위한 클라우드 기반 학습 및 평가 시스템입니다.<br /><br />
-        Jupyter, 코드 서버, 제주 차점, 실시간 랭킹 기능을 포함하고 있습니다.
+        이 플랫폼은 인공지능 경진대회 참가자들을 위한 제출 및 평가 시스템입니다.<br /><br />
+        JupyterHub  코드 서버, 노트북,  제출한 코드 채점, 실시간 랭킹 기능을 포함하고 있습니다.
       </p>
     </div>
   </div>

@@ -9,7 +9,7 @@
   <div class="wrapper">
     <div class="login-panel">
       <img src="${url.resourcesPath}/img/kaist-logo.png" alt="KAIST" class="logo" />
-      <h2 class="title">Register for KAIST AI Contest</h2>
+      <h2 class="title">Register</h2>
 
       <form id="kc-register-form" action="${url.registrationAction}" method="post">
         <#-- ✅ 에러 메시지 출력 -->
