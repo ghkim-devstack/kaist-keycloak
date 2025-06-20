@@ -1,0 +1,162 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #EAF0F8;
+ 
+}
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.register-box {
+  background: white;
+  border-radius: 12px;
+  padding: 48px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 120px;
+}
+
+.register-header {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0a1f44;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.register-header span {
+  font-size: 14px;
+  color: #888;
+  font-weight: normal;
+  margin-left: 6px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-weight: bold;
+  color: #222;
+  font-size: 15px;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+input {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #004f9e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #003b7a;
+}
+
+.back-link {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.back-link a {
+  color: #0055a5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 31, 68, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-out;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.notice-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8f9fa;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: #111;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  line-height: 1.5;
+}
+
+.notice-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.notice-box .sub-text {
+  display: block;
+  margin-top: 4px;
+  color: #555;
+  font-size: 13px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: white;
+  font-size: 16px;
+}
