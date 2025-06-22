@@ -22,7 +22,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   text-align: left;
-  max-width: 480px;
+  max-width: 520px;
   width: 100%;
 }
 
@@ -161,7 +161,7 @@ button[type="submit"]:hover {
   color: #b70000;
   padding: 12px 16px;
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   font-size: 14px;
   font-weight: bold;
 }

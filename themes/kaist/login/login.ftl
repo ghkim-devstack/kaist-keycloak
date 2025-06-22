@@ -31,7 +31,7 @@
       </#if>
 
       <form id="kc-form-login" action="${url.loginAction}" method="post">
-        <h2 class="input-title">이메일(Email)</h2>
+        <h2 class="input-title">팀장 이메일(Email)</h2>
         <input type="email" id="username" name="username" value="${(login.username!'')}" required />
 
         <h2 class="input-title">비밀번호(Password)</h2>
@@ -41,7 +41,7 @@
       </form>
 
       <p class="register-link">
-        계정이 없으신가요? <a href="${url.registrationUrl}">회원가입(Register)</a>
+        계정이 없으신가요? <a href="${url.registrationUrl}">회원가입(Sign up)</a>
       </p>
     </div>
   </div>

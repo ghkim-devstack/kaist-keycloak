@@ -43,7 +43,7 @@ extraEnvVars:
 extraVolumes:
   - name: kaist-theme
     hostPath:
-      path: /root/keycloak/themes/kaist  
+      path: /root/kaist-keycloak/themes/kaist  
       type: Directory
 
 extraVolumeMounts:

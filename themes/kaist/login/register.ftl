@@ -15,21 +15,48 @@
   <div class="register-container" id="mainContent">
     <div class="register-box">
       <img class="logo" src="${url.resourcesPath}/img/kaist-logo.png" alt="KAIST" />
-      <h1 class="register-header">회원가입<span>(Register)</span></h1>
+      <h1 class="register-header">회원가입<span>(Sign Up)</span></h1>
 
       <div class="notice-box">
-	  <span class="notice-icon">💡</span>
-	  <span>팀당 하나의 계정이 제공됩니다. <strong>회원가입은 팀장만 해주세요.</strong>
-          <span class="sub-text"> (Only one account per team. Registration is for team leaders only.)</span>
-	  </span>
-	</div>
+        <span class="notice-icon">💡</span>
+        <span>팀당 하나의 계정만 등록할 수 있습니다. <strong>팀장 이메일로 회원가입해 주세요.</strong>
+          <span class="sub-text">(Only one account is allowed per team. Please use the team leader's email to sign up.)</span>
+        </span>
+      </div>
 
       <form id="kc-register-form" action="${url.registrationAction}" method="post">
-        <#if message?has_content>
-          <div class="kc-feedback-text">${message.summary?no_esc}</div>
-        </#if>
+	<#if message?has_content>
+	  <div class="kc-feedback-text">
+	    <#list message.summary?split("<br>") as error>
+	      <#assign trimmed = error?trim>
+	      <#if trimmed == "Email already exists.">
+		<div class="error-line">
+		  <span class="error-icon">❗</span>
+		  <div>
+		    이메일이 이미 등록되어 있습니다.<br>
+		    <span class="sub-error-text">(Email already exists.)</span>
+		  </div>
+		</div>
+	      <#elseif trimmed == "Password confirmation doesn't match.">
+		<div class="error-line">
+		  <span class="error-icon">❗</span>
+		  <div>
+		    비밀번호 확인이 일치하지 않습니다.<br>
+		    <span class="sub-error-text">(Password confirmation doesn't match.)</span>
+		  </div>
+		</div>
+	      <#elseif trimmed == "Username already exists.">
+	      <#else>
+		<div class="error-line">
+		  <span class="error-icon">❗</span>
+		  <div>${trimmed}</div>
+		</div>
+	      </#if>
+	    </#list>
+	  </div>
+	</#if>
 
-        <label for="email">이메일(Email) <span class="required">*</span></label>
+        <label for="email">팀장 이메일(Email) <span class="required">*</span></label>
         <input type="email" id="email" name="email" value="${(register.formData.email!'')}" required />
 
         <label for="password">비밀번호(Password) <span class="required">*</span></label>
@@ -55,17 +82,16 @@
           <div class="g-recaptcha" data-sitekey="${recaptchaSiteKey}"></div>
         </#if>
 
-        <button type="submit">${msg("doRegister")}</button>
+        <button type="submit">Sign Up</button>
       </form>
 
       <p class="back-link">
-        <a href="${url.loginUrl}">← 로그인으로 돌아가기(Back to Login)</a>
+        <a href="${url.loginUrl}">← 로그인으로 돌아가기(Back to login)</a>
       </p>
     </div>
   </div>
 
   <script>
-    // Wait until all resources are loaded
     window.addEventListener('load', function() {
       const img = new Image();
       img.onload = hideLoader;
@@ -87,4 +113,3 @@
   </script>
 </body>
 </html>
-
